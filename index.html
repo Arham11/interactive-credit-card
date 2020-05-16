@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="css/reset.css"> <!-- fix styling inconsistencies across browsers(reset.css) -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- fonts link -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- custom css -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- custom js -->
+    <script src="js/main.js"></script>
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="card-main">
+            <div class="payment-card">
+                <div class="payment-card-inner">
+                    <div class="payment-card-front">
+                        <div class="card-head">
+                            <div class="card-chip">
+                                <img src="images/tag.png">
+                            </div>
+                            <div class="transition-effect card-brands">
+                                <img class="visa" src="images/visa.png">
+                                <img class="d-none master-card" src="images/mastercard.png">
+                                <img class="d-none discover" src="images/discover.png">
+
+                            </div>
+                        </div>
+                        <span class="d-none" id="numHide"></span>
+                        <div class="card-number" id="CardImgNum" focusing-attr="focusNumber">
+                            <span>#</span><span>#</span><span>#</span><span>#</span>
+                            <span>#</span><span>#</span><span>#</span><span>#</span>
+                            <span>#</span><span>#</span><span>#</span><span>#</span>
+                            <span>#</span><span>#</span><span>#</span><span>#</span>
+                        </div>
+                        <div class="card-name-expiry">
+                            <div class="card-name-details" focusing-attr="focusName">
+                                <div class="ch-text">Card Holder</div>
+                                <span class="d-none" id="nameHide"></span>
+                                <div class="card-name transition-effect upper-case" id="cardImgName">
+                                    <span>Enter Full Name</span>
+                                </div>
+                            </div>
+                            <div class="card-expiry" focusing-attr="focusDate">
+                                <div class="expiry-text">Expires</div>
+                                <div class="expiry-date">
+                                    <span class="date-anime mm" id="mm">MM</span>
+                                    /
+                                    <span class="date-anime yy" id="yy">YY</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="payment-card-back">
+                        <div class="black-strip"></div>
+                        <div class="input-group">
+                            <div class="label-cvv">CVV</div>
+                            <div class="cvv-input"></div>
+                        </div>
+                        <div class="transition-effect card-brands text-right">
+                            <img class="visa" src="images/visa.png">
+                            <img class="d-none master-card" src="images/mastercard.png">
+                            <img class="d-none discover" src="images/discover.png">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="payment-details">
+                <div class="input-group">
+                    <div class="label-text">Card Number</div>
+                    <input type="number" class="form-control number" focus-attr="focusNumber"
+                        onKeyPress="if(this.value.length==16) return false;">
+                </div>
+                <div class="input-group">
+                    <div class="label-text">Card Name</div>
+                    <input type="text" class="form-control upper-case" focus-attr="focusName" id="cardName">
+                </div>
+                <div class="expire-cvv">
+                    <div class="expire-dropdowns">
+                        <div class="label-text">Expiration Date</div>
+                        <div class="d-flex flex-grow-1">
+                            <div class="dropdown btn-inline flex-grow-1">
+                                <select id="month" focus-attr="focusDate">
+                                    <option value="Month" selected="">Month</option>
+                                    <option value="01">01</option>
+                                    <option value="02">02</option>
+                                    <option value="03">03</option>
+                                    <option value="04">04</option>
+                                    <option value="05">05</option>
+                                    <option value="06">06</option>
+                                    <option value="07">07</option>
+                                    <option value="08">08</option>
+                                    <option value="09">09</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                </select>
+                            </div>
+                            <div class="dropdown btn-inline flex-grow-1">
+                                <select id="year" focus-attr="focusDate">
+                                    <option value="Year" selected="">Year</option>
+                                    <option value="15">2015</option>
+                                    <option value="16">2016</option>
+                                    <option value="17">2017</option>
+                                    <option value="18">2018</option>
+                                    <option value="19">2019</option>
+                                    <option value="20">2020</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cvv">
+                        <div class="label-text">CVV</div>
+                        <input type="number" class="form-control cvv-number" id="cvvNumber"
+                            onKeyPress="if(this.value.length==4) return false;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
